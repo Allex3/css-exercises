@@ -89,3 +89,66 @@
   font-size: 13px;
   font-weight: normal;
 }
+
+/* sol */
+.container {
+    display: grid;
+    gap: 4px;
+    grid-template-columns: 1fr 4fr;
+
+}
+li {
+    list-style: none;
+}
+.header {
+    grid-column: 1 / -1; /* fit the whole row */
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+.logo {
+    place-self: start;
+}
+.menu {
+    align-self: center;
+}
+.menu ul{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.sidebar {
+    grid-row: 2 / 4; /* two rows */
+    display: grid;
+    /* grid-auto-flow is set to row, so items
+    will just go down wrapping in rows
+    adn there is only 1 column, no need 
+    to delcare it
+    no need to declare rows either, 
+    because of the flow, but i do*/
+    grid-template-rows: repeat(4, 1fr);
+    gap: 50px;
+}
+
+.side-content,
+.photo {
+  display: grid;
+  align-items: center;
+}
+
+.nav ul{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.article {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    .card {
+        height: 200px;
+    }
+}
+
+.footer {
+    grid-column: 1/-1;
+}
